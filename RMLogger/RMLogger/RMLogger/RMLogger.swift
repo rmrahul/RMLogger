@@ -15,7 +15,9 @@ class RMLogger: NSObject {
         self.configuration = configuration
     }
     
-    func log(categories: RMLogCategory...,message : @autoclosure ()-> String , separator: String = ":", terminator: String = " "){
-        print("asd","sad","asd",separator : separator,terminator : terminator)
+    func log(message : @autoclosure ()-> String , separator: String = ":", terminator: String = " "){
+        let logtype = RMLogInfoType(message: message())       
+        print(logtype.formattedMessage)
     }
+    
 }

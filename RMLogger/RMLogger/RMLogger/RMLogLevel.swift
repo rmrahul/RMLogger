@@ -8,20 +8,29 @@
 
 import UIKit
 
-protocol RMLogAdjuster {
-    func adjustMessage(_ message: String) -> String
+
+protocol RMLogFormatter {
+    func formatMessage(_ message: String) -> String
 }
 
+enum RMLogLevel {
+    case info
+    case debug
+    case error
+}
 
-protocol RMLogLevel {
+protocol RMLogType {
+    var message : String{get}
     var description : String {get}
     var prefix : String {get}
     var postfix : String {get}
-    var adjusters : [RMLogAdjuster] {get}
+    var formatters : [RMLogFormatter] {get}
+    var formattedMessage : String{get}
 }
 
 
-struct RMLogInfoLevel : RMLogLevel{
+struct RMLogInfoType : RMLogType{
+
     internal var description: String {
         return "✅"
     }
@@ -34,14 +43,30 @@ struct RMLogInfoLevel : RMLogLevel{
         return ":"
     }
     
-    internal var adjusters: [RMLogAdjuster] {
-        return [RMLogDeviceAdjuster()]
+    internal var formatters: [RMLogFormatter] {
+        return [RMLogDeviceFormatter(),RMLogVersionFormatter()]
+    }
+
+    internal var message: String
+
+    internal var formattedMessage: String{
+        var fMessage : String = message
+        for f in formatters{
+            fMessage = f.formatMessage(fMessage)
+        }
+        return "\(description) \(prefix) \(fMessage) \(postfix)"
     }
 }
 
 
-class RMLogDeviceAdjuster : RMLogAdjuster{
-    func adjustMessage(_ message: String) -> String {
+class RMLogDeviceFormatter : RMLogFormatter{
+    func formatMessage(_ message: String) -> String {
         return "iPhone : " + message
+    }
+}
+
+class RMLogVersionFormatter : RMLogFormatter{
+    func formatMessage(_ message: String) -> String {
+        return "OS version : " + message
     }
 }

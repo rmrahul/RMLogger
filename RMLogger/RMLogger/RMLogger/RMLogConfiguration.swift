@@ -18,7 +18,7 @@ struct RMLogConfiguration {
     }
     
     public static func defaultConfiguration() -> RMLogConfiguration{
-        let logLevels = [RMLogInfoLevel()]
+        let logLevels : [RMLogLevel] = []
         let logSource = RMLogSource.console
         
         return RMLogConfiguration(logLevels: logLevels, logSource: logSource)
