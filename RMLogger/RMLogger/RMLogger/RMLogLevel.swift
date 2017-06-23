@@ -9,26 +9,6 @@
 import UIKit
 
 
-protocol RMLogFormatter {
-    func formatMessage(_ message: String) -> String
-}
-
-enum RMLogLevel {
-    case info
-    case debug
-    case error
-}
-
-protocol RMLogType {
-    var message : String{get}
-    var description : String {get}
-    var prefix : String {get}
-    var postfix : String {get}
-    var formatters : [RMLogFormatter] {get}
-    var formattedMessage : String{get}
-}
-
-
 struct RMLogInfoType : RMLogType{
 
     internal var description: String {
@@ -44,13 +24,13 @@ struct RMLogInfoType : RMLogType{
     }
     
     internal var formatters: [RMLogFormatter] {
-        return [RMLogDeviceFormatter(),RMLogVersionFormatter()]
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
     }
 
-    internal var message: String
+    internal var message: ()-> String
 
     internal var formattedMessage: String{
-        var fMessage : String = message
+        var fMessage : String = message()
         for f in formatters{
             fMessage = f.formatMessage(fMessage)
         }
@@ -59,14 +39,3 @@ struct RMLogInfoType : RMLogType{
 }
 
 
-class RMLogDeviceFormatter : RMLogFormatter{
-    func formatMessage(_ message: String) -> String {
-        return "iPhone : " + message
-    }
-}
-
-class RMLogVersionFormatter : RMLogFormatter{
-    func formatMessage(_ message: String) -> String {
-        return "OS version : " + message
-    }
-}

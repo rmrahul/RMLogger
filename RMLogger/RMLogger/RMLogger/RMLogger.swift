@@ -15,9 +15,17 @@ class RMLogger: NSObject {
         self.configuration = configuration
     }
     
-    func log(message : @autoclosure ()-> String , separator: String = ":", terminator: String = " "){
-        let logtype = RMLogInfoType(message: message())       
-        print(logtype.formattedMessage)
+    func log(info : @escaping @autoclosure ()-> String){
+        let logtype = RMLogInfoType(message: info)
+
+        switch configuration.logSource {
+        case .console:
+            RMLogConsoleWriter.write(message: logtype)
+            break
+        case .file:
+            RMLogFileWriter.write(message: logtype)
+        }
     }
+    
     
 }

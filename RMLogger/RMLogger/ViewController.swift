@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RainbowSwift
-
 
 class ViewController: UIViewController {
 
@@ -21,7 +19,7 @@ class ViewController: UIViewController {
         //print("Hello","asdad","ewqeqw","adsa",separator : "4",terminator :"3")
 
         let logger = RMLogger()
-        logger.log(message: "Hello",separator : "#",terminator : "%")
+        logger.log(info: "Hello")
 
         
         //print("✅ : This is goof")

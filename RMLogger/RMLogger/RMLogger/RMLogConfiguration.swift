@@ -8,6 +8,19 @@
 
 import UIKit
 
+enum RMLogLevel {
+    case info
+    case warning
+    case debug
+    case error
+    case critical
+}
+
+enum RMLogSource {
+    case console
+    case file
+}
+
 struct RMLogConfiguration {
     public let logLevels : [RMLogLevel]
     public let logSource : RMLogSource

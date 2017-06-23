@@ -8,6 +8,18 @@
 
 import UIKit
 
-class RMLogWriter: NSObject {
+protocol RMLogWriter {
+    static func write(message : RMLogType)
+}
 
+class RMLogConsoleWriter: RMLogWriter {
+    static func write(message: RMLogType) {
+        print(message.formattedMessage)
+    }
+}
+
+class RMLogFileWriter: RMLogWriter{
+    static func write(message: RMLogType) {
+            // write it on file
+    }
 }

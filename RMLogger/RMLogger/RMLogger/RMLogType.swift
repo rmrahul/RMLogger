@@ -8,14 +8,11 @@
 
 import UIKit
 
-enum RMLogCategory {
-    case database
-    case network
-    case vcLifecycle
-    case businessLogic
-}
-
-enum RMLogSource {
-    case console
-    case file
+protocol RMLogType {
+    var message : ()-> String{get}
+    var description : String {get}
+    var prefix : String {get}
+    var postfix : String {get}
+    var formatters : [RMLogFormatter] {get}
+    var formattedMessage : String{get}
 }

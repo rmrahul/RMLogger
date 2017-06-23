@@ -12,12 +12,12 @@
 		07B52C231EF25D8C00ED60C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B52C211EF25D8C00ED60C2 /* Main.storyboard */; };
 		07B52C251EF25D8C00ED60C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B52C241EF25D8C00ED60C2 /* Assets.xcassets */; };
 		07B52C281EF25D8C00ED60C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B52C261EF25D8C00ED60C2 /* LaunchScreen.storyboard */; };
-		07B52C601EF2872900ED60C2 /* RMLogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C5F1EF2872900ED60C2 /* RMLogType.swift */; };
 		07B52C621EF2885B00ED60C2 /* RMLogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C611EF2885B00ED60C2 /* RMLogConfiguration.swift */; };
 		07B52C641EF2888800ED60C2 /* RMLogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C631EF2888800ED60C2 /* RMLogLevel.swift */; };
-		07B52C661EF2889B00ED60C2 /* RMLogAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C651EF2889B00ED60C2 /* RMLogAdjuster.swift */; };
+		07B52C661EF2889B00ED60C2 /* RMLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C651EF2889B00ED60C2 /* RMLogFormatter.swift */; };
 		07B52C681EF28C9E00ED60C2 /* RMLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C671EF28C9E00ED60C2 /* RMLogger.swift */; };
 		07B52C6B1EF2C15700ED60C2 /* RMLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C6A1EF2C15700ED60C2 /* RMLogWriter.swift */; };
+		7EE1BF0C1EFCE08D00AD9C5F /* RMLogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE1BF0B1EFCE08D00AD9C5F /* RMLogType.swift */; };
 		E567379F42A744298D34167C /* Pods_RMLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9CFE7D3D98D966C7DB8300 /* Pods_RMLogger.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,12 +29,12 @@
 		07B52C241EF25D8C00ED60C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07B52C271EF25D8C00ED60C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07B52C291EF25D8C00ED60C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B52C5F1EF2872900ED60C2 /* RMLogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogType.swift; sourceTree = "<group>"; };
 		07B52C611EF2885B00ED60C2 /* RMLogConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogConfiguration.swift; sourceTree = "<group>"; };
 		07B52C631EF2888800ED60C2 /* RMLogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogLevel.swift; sourceTree = "<group>"; };
-		07B52C651EF2889B00ED60C2 /* RMLogAdjuster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogAdjuster.swift; sourceTree = "<group>"; };
+		07B52C651EF2889B00ED60C2 /* RMLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogFormatter.swift; sourceTree = "<group>"; };
 		07B52C671EF28C9E00ED60C2 /* RMLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogger.swift; sourceTree = "<group>"; };
 		07B52C6A1EF2C15700ED60C2 /* RMLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogWriter.swift; sourceTree = "<group>"; };
+		7EE1BF0B1EFCE08D00AD9C5F /* RMLogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLogType.swift; sourceTree = "<group>"; };
 		8D9CFE7D3D98D966C7DB8300 /* Pods_RMLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE18627A5AE0718D2BC7300 /* Pods-RMLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-RMLogger/Pods-RMLogger.release.xcconfig"; sourceTree = "<group>"; };
 		D36E9FE862CD1044E9F62738 /* Pods-RMLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RMLogger/Pods-RMLogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,10 +87,10 @@
 		07B52C5E1EF2871500ED60C2 /* RMLogger */ = {
 			isa = PBXGroup;
 			children = (
-				07B52C5F1EF2872900ED60C2 /* RMLogType.swift */,
+				7EE1BF0B1EFCE08D00AD9C5F /* RMLogType.swift */,
 				07B52C611EF2885B00ED60C2 /* RMLogConfiguration.swift */,
 				07B52C631EF2888800ED60C2 /* RMLogLevel.swift */,
-				07B52C651EF2889B00ED60C2 /* RMLogAdjuster.swift */,
+				07B52C651EF2889B00ED60C2 /* RMLogFormatter.swift */,
 				07B52C671EF28C9E00ED60C2 /* RMLogger.swift */,
 				07B52C6A1EF2C15700ED60C2 /* RMLogWriter.swift */,
 			);
@@ -198,7 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E82CF4E3BE506628D606138A /* [CP] Embed Pods Frameworks */ = {
@@ -243,9 +243,9 @@
 				07B52C6B1EF2C15700ED60C2 /* RMLogWriter.swift in Sources */,
 				07B52C201EF25D8C00ED60C2 /* ViewController.swift in Sources */,
 				07B52C1E1EF25D8C00ED60C2 /* AppDelegate.swift in Sources */,
+				7EE1BF0C1EFCE08D00AD9C5F /* RMLogType.swift in Sources */,
 				07B52C681EF28C9E00ED60C2 /* RMLogger.swift in Sources */,
-				07B52C601EF2872900ED60C2 /* RMLogType.swift in Sources */,
-				07B52C661EF2889B00ED60C2 /* RMLogAdjuster.swift in Sources */,
+				07B52C661EF2889B00ED60C2 /* RMLogFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
