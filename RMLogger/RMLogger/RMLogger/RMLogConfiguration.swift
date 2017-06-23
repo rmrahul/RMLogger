@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum RMLogLevel {
-    case info
-    case warning
-    case debug
-    case error
-    case critical
+enum RMLogLevel : Int {
+    case info = 0
+    case warning = 1
+    case debug = 2
+    case error = 3
+    case critical = 4
 }
 
 enum RMLogSource {
@@ -31,7 +31,7 @@ struct RMLogConfiguration {
     }
     
     public static func defaultConfiguration() -> RMLogConfiguration{
-        let logLevels : [RMLogLevel] = []
+        let logLevels : [RMLogLevel] = [.info,.warning,.debug]
         let logSource = RMLogSource.console
         
         return RMLogConfiguration(logLevels: logLevels, logSource: logSource)

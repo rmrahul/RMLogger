@@ -16,38 +16,43 @@ class RMLogger: NSObject {
     }
     
     func log(info : @escaping @autoclosure ()-> String){
-        let logtype = RMLogInfoType(message: info)
-
-        writeMessage(logType: logtype)
+        if isLogAllowed(level: .info){
+            let logtype = RMLogInfoType(message: info)
+            writeMessage(logType: logtype)
+        }
     }
     
     func log(warning : @escaping @autoclosure ()-> String){
-        let logtype = RMLogWarningType(message: warning)
-        
-        writeMessage(logType: logtype)
+        if isLogAllowed(level: .warning){
+            let logtype = RMLogWarningType(message: warning)
+            writeMessage(logType: logtype)
+        }
     }
     
     func log(debug : @escaping @autoclosure ()-> String){
-        let logtype = RMLogDebugType(message: debug)
-        
-        writeMessage(logType: logtype)
+        if isLogAllowed(level: .debug){
+            let logtype = RMLogDebugType(message: debug)
+            writeMessage(logType: logtype)
+        }
     }
     
     func log(error : @escaping @autoclosure ()-> String){
-        let logtype = RMLogErrorType(message: error)
-
-        writeMessage(logType: logtype)
+        if isLogAllowed(level: .error){
+            let logtype = RMLogErrorType(message: error)
+            writeMessage(logType: logtype)
+        }
     }
 
     func log(critical : @escaping @autoclosure ()-> String){
-        let logtype = RMLogCriticalType(message: critical)
-        
-        writeMessage(logType: logtype)
+        if isLogAllowed(level: .critical){
+            let logtype = RMLogCriticalType(message: critical)
+            writeMessage(logType: logtype)
+        }
     }
 
     
-    private func isLogAllowed(level : RMLogLevel){
-        
+    private func isLogAllowed(level : RMLogLevel) -> Bool{
+        return configuration.logLevels.contains(level)
     }
     
     private func writeMessage(logType : RMLogType){
