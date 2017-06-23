@@ -1,0 +1,6 @@
+framework module Pods_RMLogger {
+  umbrella header "Pods-RMLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}
