@@ -24,5 +24,19 @@ class RMLogVersionFormatter : RMLogFormatter{
     }
 }
 
+class RMLogDateFormatter : RMLogFormatter{
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        return formatter
+    }
+
+    func formatMessage(_ message: String) -> String {
+        return "\(dateFormatter.string(from: Date())) : \(message)"
+    }
+}
+
+
 
 

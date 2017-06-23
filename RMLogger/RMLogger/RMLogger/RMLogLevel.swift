@@ -24,7 +24,7 @@ struct RMLogInfoType : RMLogType{
     }
     
     internal var formatters: [RMLogFormatter] {
-        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter(),RMLogDateFormatter()]
     }
 
     internal var message: ()-> String
@@ -52,7 +52,7 @@ struct RMLogWarningType : RMLogType{
     }
     
     internal var formatters: [RMLogFormatter] {
-        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter(),RMLogDateFormatter()]
     }
     
     internal var message: ()-> String
@@ -80,7 +80,7 @@ struct RMLogDebugType : RMLogType{
     }
     
     internal var formatters: [RMLogFormatter] {
-        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter(),RMLogDateFormatter()]
     }
     
     internal var message: ()-> String
@@ -136,7 +136,7 @@ struct RMLogCriticalType : RMLogType{
     }
     
     internal var formatters: [RMLogFormatter] {
-        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter(),RMLogDateFormatter()]
     }
     
     internal var message: ()-> String

@@ -10,6 +10,8 @@ import UIKit
 
 class RMLogger: NSObject {
     private let configuration : RMLogConfiguration
+    private let fileWritter = RMLogFileWriter()
+    private let consoleWritter = RMLogConsoleWriter()
     
     init(configuration : RMLogConfiguration = RMLogConfiguration.defaultConfiguration()) {
         self.configuration = configuration
@@ -58,10 +60,10 @@ class RMLogger: NSObject {
     private func writeMessage(logType : RMLogType){
         switch configuration.logSource {
         case .console:
-            RMLogConsoleWriter.write(message: logType)
+            consoleWritter.write(message: logType)
             break
         case .file:
-            RMLogFileWriter.write(message: logType)
+            fileWritter.write(message: logType)
         }
     }
     
