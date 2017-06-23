@@ -20,7 +20,10 @@ class ViewController: UIViewController {
 
         let logger = RMLogger()
         logger.log(info: "Hello")
-
+        logger.log(warning: "This is warning")
+        logger.log(debug: "This is debug message")
+        logger.log(error: "This is revorable error")
+        logger.log(critical: "Can't recover from this..")
         
         //print("✅ : This is goof")
     }

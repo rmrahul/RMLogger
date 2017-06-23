@@ -16,11 +16,11 @@ struct RMLogInfoType : RMLogType{
     }
     
     internal var prefix: String {
-        return ""
+        return " "
     }
     
     internal var postfix: String {
-        return ":"
+        return " : "
     }
     
     internal var formatters: [RMLogFormatter] {
@@ -34,8 +34,122 @@ struct RMLogInfoType : RMLogType{
         for f in formatters{
             fMessage = f.formatMessage(fMessage)
         }
-        return "\(description) \(prefix) \(fMessage) \(postfix)"
+        return "\(description)\(prefix)\(fMessage)\(postfix)"
     }
 }
+
+struct RMLogWarningType : RMLogType{
+    internal var description: String {
+        return "⚠️"
+    }
+    
+    internal var prefix: String {
+        return " "
+    }
+    
+    internal var postfix: String {
+        return " : "
+    }
+    
+    internal var formatters: [RMLogFormatter] {
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+    }
+    
+    internal var message: ()-> String
+    
+    internal var formattedMessage: String{
+        var fMessage : String = message()
+        for f in formatters{
+            fMessage = f.formatMessage(fMessage)
+        }
+        return "\(description)\(prefix)\(fMessage)\(postfix)"
+    }
+}
+
+struct RMLogDebugType : RMLogType{
+    internal var description: String {
+        return "🛠"
+    }
+    
+    internal var prefix: String {
+        return " "
+    }
+    
+    internal var postfix: String {
+        return " : "
+    }
+    
+    internal var formatters: [RMLogFormatter] {
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+    }
+    
+    internal var message: ()-> String
+    
+    internal var formattedMessage: String{
+        var fMessage : String = message()
+        for f in formatters{
+            fMessage = f.formatMessage(fMessage)
+        }
+        return "\(description)\(prefix)\(fMessage)\(postfix)"
+    }
+}
+
+struct RMLogErrorType : RMLogType{
+    internal var description: String {
+        return "❗️"
+    }
+    
+    internal var prefix: String {
+        return " "
+    }
+    
+    internal var postfix: String {
+        return " : "
+    }
+    
+    internal var formatters: [RMLogFormatter] {
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+    }
+    
+    internal var message: ()-> String
+    
+    internal var formattedMessage: String{
+        var fMessage : String = message()
+        for f in formatters{
+            fMessage = f.formatMessage(fMessage)
+        }
+        return "\(description)\(prefix)\(fMessage)\(postfix)"
+    }
+}
+
+struct RMLogCriticalType : RMLogType{
+    internal var description: String {
+        return "⛔️"
+    }
+    
+    internal var prefix: String {
+        return " "
+    }
+    
+    internal var postfix: String {
+        return " : "
+    }
+    
+    internal var formatters: [RMLogFormatter] {
+        return [RMLogVersionFormatter(),RMLogDeviceFormatter()]
+    }
+    
+    internal var message: ()-> String
+    
+    internal var formattedMessage: String{
+        var fMessage : String = message()
+        for f in formatters{
+            fMessage = f.formatMessage(fMessage)
+        }
+        return "\(description)\(prefix)\(fMessage)\(postfix)"
+    }
+}
+
+
 
 
